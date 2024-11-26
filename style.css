@@ -1,0 +1,74 @@
+* {
+    background-color: aliceblue;
+    margin: auto;
+    padding: auto;
+    background-image: url(wp6248666.webp);
+    background-size: 1550px, 1000px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    backdrop-filter: blur(20px);
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 500px;
+    width: 400px;
+    margin-top: 100px;
+    background: none;
+}
+
+#heading {
+    color: wheat;
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    background: none;
+}
+
+h1 {
+    background: none;
+}
+
+.numbers {
+    border-radius: 10px;
+    padding: 20px;
+    height: 350px;
+    width: 350px;
+    background: none;
+}
+
+.rows {
+    margin: 2px;
+    background: none;
+}
+
+button {
+    backdrop-filter: blur(100px);
+    height: 40px;
+    width: 78px;
+    margin: 2px;
+    color: aliceblue;
+}
+
+input {
+    height: 50px;
+    width: 350px;
+    color: white;
+    font-size: 50px;
+    border: 2px solid white;
+    align-items: center;
+    text-align: center;
+    background: none;
+}
+
+.input {
+    width: 375px;
+    margin-left: 22px;
+    background: none;
+}
