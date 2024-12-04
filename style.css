@@ -17,7 +17,7 @@ body {
     backdrop-filter: blur(20px);
     border: 2px solid white;
     border-radius: 10px;
-    height: 500px;
+    height: 600px;
     width: 400px;
     margin-top: 100px;
     background: none;
@@ -45,6 +45,7 @@ h1 {
 
 .rows {
     margin: 2px;
+    margin-bottom: 2px;
     background: none;
 }
 
@@ -55,6 +56,11 @@ button {
     margin: 2px;
     color: aliceblue;
 }
+
+/*.special button {
+    height: 30px;
+    width: 50px;
+}*/
 
 input {
     height: 50px;
