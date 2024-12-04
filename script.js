@@ -6,31 +6,37 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     const buttonValue = button.textContent;
-
-    // Handle different button types
-    if (buttonValue >= '0' && buttonValue <= '9' || buttonValue === '.') {
-      // Append digit to input field
-      inputField.value += buttonValue;
-    } else if (buttonValue === '+' || buttonValue === '-' || buttonValue === '*' || buttonValue === '/' || buttonValue === '%') {
-      // Append operator to input field
-      inputField.value += buttonValue;
-    } else if (buttonValue === '=') {
-      // Evaluate the expression and display the result
-      try {
-        const result = eval(inputField.value);
-        inputField.value = result;
-      } catch (error) {
-        inputField.value = 'Error';
-      }
-    } else if (buttonValue === 'C') {
-      // Clear the input field
-      inputField.value = '';
-    } else if (buttonValue === 'CE') {
-      // Clear the last character
-      inputField.value = inputField.value.slice(0, -1);
-    } else if (buttonValue === '+/-') {
-      // Change the sign
-      inputField.value = inputField.value * -1;
-    }
+    handleButtonPress(buttonValue);
   });
 });
+
+// Add event listener for keyboard input
+document.addEventListener('keydown', (e) => {
+  const keyValue = e.key;
+  handleButtonPress(keyValue);
+});
+
+// Function to handle button presses and keyboard input
+function handleButtonPress(value) {
+  if (value >= '0' && value <= '9' || value === '.') {
+    // Append digit to input field
+    inputField.value += value;
+  } else if (value === '+' || value === '-' || value === '*' || value === '/' || value === '%') {
+    // Append operator to input field
+    inputField.value += value;
+  } else if (value === '=' || value === 'Enter') {
+    // Evaluate the expression and display the result
+    try {
+      const result = eval(inputField.value);
+      inputField.value = result;
+    } catch (error) {
+      inputField.value = 'Error';
+    }
+  } else if (value === 'Backspace') {
+    // Clear the last character
+    inputField.value = inputField.value.slice(0, -1);
+  } else if (value === 'Escape') {
+    // Clear the input field
+    inputField.value = '';
+  }
+}
